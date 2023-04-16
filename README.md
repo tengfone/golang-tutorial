@@ -20,3 +20,24 @@ Most important things:
   - Reference Types: slices, maps, channels, pointers, functions
 - When we create a slice, go will auto create 2 data structure, an array and a struct that records the length and capacity of the slice plus a reference to the underlying array
 - Golang everything is pass by value.
+
+## Maps
+
+Maps are similar to dict (python) or object (JS). Map key and value must be of the same type.
+
+Maps Vs Structures
+
+Maps (Reference Type):
+
+- All keys must be of the same type
+- All values must be of the same type
+- Keys are indexed
+- Use to represent a collection of related properties
+- Don't need to know all the keys at compile time
+
+Structures (Value Type):
+
+- Values can be of different types
+- Keys are not indexed
+- Need to know all the keys at compile time
+- Use to represent a thing with alot of different properties
