@@ -41,3 +41,22 @@ Structures (Value Type):
 - Keys are not indexed
 - Need to know all the keys at compile time
 - Use to represent a thing with alot of different properties
+
+## Interfaces
+
+Interfaces makes it easier for us to reuse code between different parts of our code base. E.g:
+Shuffling a deck of cards, can only take in type deck: func (d deck) shuffle() but if we use interface, we can use any type that has shuffle method. Read more inside the interfaces folder.
+
+- Concrete Type
+
+  - map/struct/int/string/customType
+
+- Interface Type
+  - type interface
+
+Interface are not generic types, need to be implicit, a contract to help us manage type.
+
+- Interfaces can have nested interfaces
+
+Another example:
+Reading HTTP Request body have a function printHTTP([]customDataType), reading file on hard drive printFile([]string) etc but they all have different data type BUT SAME FUNCTION. The solution is a reader interface. No matter what source of input, put a reader interface infront of that and output a data that anyone can work with like a byte slice []byte.
