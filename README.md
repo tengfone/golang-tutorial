@@ -60,3 +60,19 @@ Interface are not generic types, need to be implicit, a contract to help us mana
 
 Another example:
 Reading HTTP Request body have a function printHTTP([]customDataType), reading file on hard drive printFile([]string) etc but they all have different data type BUT SAME FUNCTION. The solution is a reader interface. No matter what source of input, put a reader interface infront of that and output a data that anyone can work with like a byte slice []byte.
+
+## Concurrency
+
+Basically enable concurrency by using goroutines and channels. Go routine that exist in our running program, this can be used to run code concurrently. Many go routine to one go scheduler to one cpu core. Scheduler runs ONE routine until it finishes or makes a blocking call then it will run another routine. By default Go scheduler only use one CPU core but you can specify how many cores you want to use.
+
+Concurrency - We can have multiple threads executing code. If one thread blocks another one is picked up and worked on.
+Parallelism - We can do multiple things at the exact same nanosecond
+Child go routine - Child routines created by the go keyword
+
+Channels
+
+- Channel will be used to communicate between go routines. Channels input type need to be of the same type.
+- Sending Data with Channels
+  - channel <- 42 // send data to channel
+  - myNumber <- channel // wait for data to be sent to channel and then assign it to myNumber
+  - fmt.Println(<-channel) // receive data from channel and print
